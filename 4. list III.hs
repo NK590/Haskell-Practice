@@ -26,3 +26,4 @@ main :: IO()
 main = do
     print (myAnd [True, False, True])
     print (myOr [True, False, True])
+    print (myReverse [1, 2, 3, 4, 5])
