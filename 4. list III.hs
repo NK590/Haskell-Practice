@@ -22,8 +22,18 @@ myReverse = foldl' myFlip []
     where
         myFlip xs x = x :xs
 
+-- 2-1
+myScanr step zero [] = [zero]
+myScanr step zero (x:xs) = zero : myScanr step (step zero x) xs
+
+-- 2-2
+facList n = scanl (*) 1 [2..n]
+
 main :: IO()
 main = do
     print (myAnd [True, False, True])
     print (myOr [True, False, True])
     print (myReverse [1, 2, 3, 4, 5])
+
+    print (myScanr (+) 0 [1, 2, 3, 4, 5])
+    print (facList 5)
